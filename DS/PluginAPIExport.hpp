@@ -12,8 +12,8 @@ namespace PluginAPIExport
 
 	const char* pluginName = "DS";
 	const UInt32 pluginUID = 'DS';
-	const UInt32 pluginVersionInt = 0x0080;
-	const char* pluginVersionString = "0.8.0";
+	const UInt32 pluginVersionInt = 0x0090;
+	const char* pluginVersionString = "0.9.0";
 
 	BSFixedString GetVersionString(StaticFunctionTag* _)
 	{
