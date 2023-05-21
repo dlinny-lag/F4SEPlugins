@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TestRunner.cpp" />
+    <ClCompile Include="..\Shared\MyTrace.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameAPI.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameRTTI.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se_common\Relocation.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusArgs.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameForms.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusValue.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusVM.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusStruct.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameExtraData.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusInterfaces.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se_common\Utilities.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameUtilities.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameTypes.cpp">
+      <Filter>f4se</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\f4se\f4se\GameAPI.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameData.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameEvents.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameExtraData.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameFormComponents.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameForms.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameInput.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameReferences.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameRTTI.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameTypes.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameUtilities.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\ObScript.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusArgs.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusComponent.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusEvents.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusInterfaces.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusNativeFunctions.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusStruct.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusValue.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusVM.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se_common\Relocation.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se_common\Utilities.h">
+      <Filter>f4se</Filter>
+    </ClInclude>
+    <ClInclude Include="TestRunner.h" />
+    <ClInclude Include="..\Shared\MyTrace.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayTester.hpp" />
+    <ClInclude Include="SetTester.hpp" />
+    <ClInclude Include="StructHelper.hpp" />
+    <ClInclude Include="..\DS\CollectionAccessor.h">
+      <Filter>DSAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DS\CollectionTypeId.h">
+      <Filter>DSAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DS\transferable_vector.hpp">
+      <Filter>DSAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\TypeDefs.h">
+      <Filter>DSAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="TestDataProvider.hpp" />
+    <ClInclude Include="DictTester.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exports.def" />
+    <None Include="..\..\f4se\f4se\GameRTTI.inl">
+      <Filter>f4se</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="f4se">
+      <UniqueIdentifier>{9ccdf0bc-eff3-4b97-a518-88128b2c4da4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{b87c4b98-92db-4db1-bdad-9fa65100eead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DSAPI">
+      <UniqueIdentifier>{8a4a34e6-b111-48ec-aebb-16fc48126a82}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

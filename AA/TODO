@@ -1,0 +1,2 @@
+verify how values are consistent when PeakValueModifier is applied
+verify what values are returned when base values was changed directly

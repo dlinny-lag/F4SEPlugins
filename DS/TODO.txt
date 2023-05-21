@@ -1,0 +1,94 @@
+
+Array
+  float
+  int
+  BSFixedString
+  TESForm*
+  Struct
+
+Set
+  int
+  float
+  BSFixedString
+  TESForm*
+
+Dictionary
+  Key:
+      int
+      BSFixedString
+      TESForm*
+  Value:
+      float
+      int
+      BSFixedString
+      TESForm*
+      Struct
+
+      Array<float>
+      Array<int>
+      Array<BSFixedString>
+      Array<TESForm*>
+      Array<Struct>
+
+      Set<float>
+      Set<int>
+      Set<BSFixedString>
+      Set<TESForm*>
+
+
+ability to add new fields to structs. new fields should not affect existing struct instances
+
+
+sort arrays: 
+sorting mode - int flags. lower bit - asc and desc order of sorting
+form arrays - order by FormId
+structs arrays - lower 2 bytes - sorting mode flags. higher 2 bytes - index of field to sort by. rejected
+
+
+exchange API:
+global interfaces difined for main.cpp translation unit only. will be reused for F4SE plugins exchange
+
+Array 
+  + AppendArray(arrayId)
+
+Set 
+  + CopyToArray(arrayId)
+  + AddArray(arrayId)
+  + AddSet(setId)
+  + Intersect(arrayId)
+  + Interset(setId)
+  + RemoveArray(arrayId)
+  + RemoveSet(setId)
+
+Dict
+  + CopyKeysToArray(arrayId)
+  + CopyKeysToSet(setId)
+  + RemoveKeysByArray(arrayId)
+  + RemoveKeysBySet(setId)
+
+ArrayDict inherit Dict
+  + AppendArray(arrayId)
+  + CopyToArray(arrayId)
+
+
+
+replace 'passing by reference' by 'passing by value' for arguments(keys, values) 
+VMValue (for structs)- 16 bytes
+BSFixedString - 8 bytes
+SInt32 - 4 bytes
+float - 4 bytes
+TESForm* - 8 bytes
+
+
+
+array <-> string serialization
+struct <-> string serialization
+Can be useful as work around of absence of arrays in struct and nested struct
+
+validate Form pointers in structs before accessing and saving
+
+reduce code duplication!!!!
+simplify RegisterFunction + SetFunctionFlags calls. done
+extract Iterable class - (CreateIterator, DeleteIterator, NextKey) base for SetExport, ValueDictExport & ArrayDictExport. done
+extract Storable class - Clear, Save, Load, Dump, DumpAll. rejected
+extract base class for ValueDictExport & ArrayDictExport. done

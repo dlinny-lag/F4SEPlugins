@@ -1,0 +1,51 @@
+<PapyrusProject xmlns="PapyrusProject.xsd" Flags="Institute_Papyrus_Flags.flg" Output="C:\Program Files (x86)\Steam\steamapps\common\Fallout 4\Data\Scripts" 
+  Optimize="false" Release="false" Final="false">  
+  <Imports>  
+    <Import>c:\Program Files (x86)\Steam\steamapps\common\Fallout 4\Data\Scripts\Source\User</Import>  
+    <Import>c:\Program Files (x86)\Steam\steamapps\common\Fallout 4\Data\Scripts\Source\Base</Import>    
+  </Imports>  
+  <Scripts>  
+    <Script>DS\Plugin.psc</Script>
+    <Script>DS\Debug.psc</Script>
+    <Script>DS\StringAttribute.psc</Script>
+    <Script>DS\StructArray.psc</Script>
+    <Script>DS\IntArray.psc</Script>
+    <Script>DS\FloatArray.psc</Script>
+    <Script>DS\StringArray.psc</Script>
+    <Script>DS\FormArray.psc</Script>
+    <Script>DS\IntSet.psc</Script>
+    <Script>DS\FloatSet.psc</Script>
+    <Script>DS\StringSet.psc</Script>
+    <Script>DS\FormSet.psc</Script>
+    <Script>DS\IntDictInt.psc</Script>
+    <Script>DS\IntDictFloat.psc</Script>
+    <Script>DS\IntDictString.psc</Script>
+    <Script>DS\IntDictForm.psc</Script>
+    <Script>DS\StringDictInt.psc</Script>
+    <Script>DS\StringDictFloat.psc</Script>
+    <Script>DS\StringDictString.psc</Script>
+    <Script>DS\StringDictForm.psc</Script>
+    <Script>DS\FormDictInt.psc</Script>
+    <Script>DS\FormDictFloat.psc</Script>
+    <Script>DS\FormDictString.psc</Script>
+    <Script>DS\FormDictForm.psc</Script>
+    <Script>DS\IntDictStruct.psc</Script>
+    <Script>DS\StringDictStruct.psc</Script>
+    <Script>DS\FormDictStruct.psc</Script>
+    <Script>DS\IntDictIntArray.psc</Script>
+    <Script>DS\IntDictFloatArray.psc</Script>
+    <Script>DS\IntDictStringArray.psc</Script>
+    <Script>DS\IntDictFormArray.psc</Script>
+    <Script>DS\StringDictIntArray.psc</Script>
+    <Script>DS\StringDictFloatArray.psc</Script>
+    <Script>DS\StringDictStringArray.psc</Script>
+    <Script>DS\StringDictFormArray.psc</Script>
+    <Script>DS\FormDictIntArray.psc</Script>
+    <Script>DS\FormDictFloatArray.psc</Script>
+    <Script>DS\FormDictStringArray.psc</Script>
+    <Script>DS\FormDictFormArray.psc</Script>
+    <Script>DS\IntDictStructArray.psc</Script>
+    <Script>DS\StringDictStructArray.psc</Script>
+    <Script>DS\FormDictStructArray.psc</Script>
+  </Scripts>  
+</PapyrusProject>

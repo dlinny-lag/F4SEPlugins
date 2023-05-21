@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\f4se\f4se\GameAPI.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameData.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameEvents.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameExtraData.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameFormComponents.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameForms.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameInput.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameReferences.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameRTTI.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameTypes.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\GameUtilities.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\ObScript.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusArgs.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusComponent.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusEvents.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusInterfaces.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusNativeFunctions.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusStruct.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusValue.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se\PapyrusVM.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se_common\Relocation.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\f4se\f4se_common\Utilities.cpp">
+      <Filter>F4SE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\MyTrace.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\Indent.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="Identifiable.cpp" />
+    <ClCompile Include="StructInfo.cpp">
+      <Filter>Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="StructsInfoCache.cpp">
+      <Filter>Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="StructField.cpp">
+      <Filter>Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="BSReferenceTypeUtils.cpp" />
+    <ClCompile Include="StructHandler.cpp">
+      <Filter>Traits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\SerializationHelper.cpp">
+      <Filter>Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="StructSerialization.cpp">
+      <Filter>Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayAPIExport.cpp">
+      <Filter>Array</Filter>
+    </ClCompile>
+    <ClCompile Include="SetAPIExport.cpp">
+      <Filter>Set</Filter>
+    </ClCompile>
+    <ClCompile Include="ValueDictAPIExport.cpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayDictAPIExport.cpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClCompile>
+    <ClCompile Include="AccessRequestsHandler.cpp">
+      <Filter>F4API</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\f4se\f4se\GameAPI.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameData.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameEvents.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameExtraData.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameFormComponents.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameForms.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameInput.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameReferences.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameRTTI.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameTypes.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\GameUtilities.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\ObScript.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusArgs.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusComponent.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusEvents.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusInterfaces.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusNativeFunctions.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusStruct.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusValue.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se\PapyrusVM.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se_common\Relocation.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\f4se\f4se_common\Utilities.h">
+      <Filter>F4SE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\MyTrace.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginAPIExport.hpp" />
+    <ClInclude Include="..\Shared\FormsSet.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugAPIExport.hpp" />
+    <ClInclude Include="Array.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayAPIExport.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Indent.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="Set.hpp">
+      <Filter>Set</Filter>
+    </ClInclude>
+    <ClInclude Include="SetsSet.hpp">
+      <Filter>Set</Filter>
+    </ClInclude>
+    <ClInclude Include="SetAPIExport.h">
+      <Filter>Set</Filter>
+    </ClInclude>
+    <ClInclude Include="Dict.hpp">
+      <Filter>Dict</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\BSFixedStringHashier.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\FormComparer.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\FormHashier.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueDict.hpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="Identifiable.h" />
+    <ClInclude Include="ValueHelper.hpp" />
+    <ClInclude Include="CollectionTypeId.h" />
+    <ClInclude Include="Iterator.hpp">
+      <Filter>Iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="IteratorsSet.hpp">
+      <Filter>Iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\TypeDefs.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueDictAPIExport.h">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructInfo.h">
+      <Filter>Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="StructsInfoCache.h">
+      <Filter>Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="StructField.h">
+      <Filter>Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArray.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveArray.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveArraysSet.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="ArraysSet.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArraysSet.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="BSReferenceTypeUtils.h" />
+    <ClInclude Include="ArrayDict.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveArrayDict.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArrayCreator.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveHandler.hpp">
+      <Filter>Traits</Filter>
+    </ClInclude>
+    <ClInclude Include="StructHandler.h">
+      <Filter>Traits</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueHandler.hpp">
+      <Filter>Traits</Filter>
+    </ClInclude>
+    <ClInclude Include="CollectionCreator.hpp">
+      <Filter>Traits</Filter>
+    </ClInclude>
+    <ClInclude Include="StructValueDict.hpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="DictsSet.hpp">
+      <Filter>Dict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructValueDictCreator.hpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArrayDict.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveArrayDictsSet.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArrayDictsSet.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayDictsSet.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveArrayHandler.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArrayHandler.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayDictAPIExport.h">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArrayDictCreator.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveDictsSet.hpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDictsSet.hpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyValidator.hpp">
+      <Filter>Traits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Comparer.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\BSFixedStringEqual.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\SerializationHelper.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="StructSerialization.h">
+      <Filter>Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\ScriptHandle.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayExport.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="PapyrusExports.h" />
+    <ClInclude Include="PrimitiveArrayExport.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArrayExport.hpp">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="SetExport.hpp">
+      <Filter>Set</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueDictExport.hpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveValueDictExport.hpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructValueDictExport.hpp">
+      <Filter>Dict\ValueDict</Filter>
+    </ClInclude>
+    <ClInclude Include="ElementConverter.hpp" />
+    <ClInclude Include="ArrayDictExport.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimitiveArrayDictExport.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="StructArrayDictExport.hpp">
+      <Filter>Dict\ArrayDict</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterable.hpp" />
+    <ClInclude Include="transferable_vector.hpp" />
+    <ClInclude Include="DictExport.hpp">
+      <Filter>Dict</Filter>
+    </ClInclude>
+    <ClInclude Include="CollectionAccessor.h">
+      <Filter>F4API</Filter>
+    </ClInclude>
+    <ClInclude Include="AccessRequestsHandler.h">
+      <Filter>F4API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\StructValueHelper.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\VMValueEqual.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VersionInfo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exports.def" />
+    <None Include="..\..\f4se\f4se\GameRTTI.inl">
+      <Filter>F4SE</Filter>
+    </None>
+    <None Include="AccessRequestsHandler.defs.h">
+      <Filter>F4API</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="F4SE">
+      <UniqueIdentifier>{1b03321d-48e1-44e2-b822-5e87ab0572a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared">
+      <UniqueIdentifier>{ae8f081f-bee5-43c2-9f9a-a5f4172e0a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Array">
+      <UniqueIdentifier>{ad54af22-72f9-41f6-8e63-502bef747a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Set">
+      <UniqueIdentifier>{3c402336-5157-4d87-9e48-e3ca34fd4af2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dict">
+      <UniqueIdentifier>{c1455edc-4fb3-4788-b53a-6d2de2f1e108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dict\ValueDict">
+      <UniqueIdentifier>{d13c955f-af91-40a1-94a7-bc99ca94b4c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Iterator">
+      <UniqueIdentifier>{f09d4e01-3252-4223-8e23-e145fdba0cb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Structs">
+      <UniqueIdentifier>{63907a4d-347a-4993-870b-6eb9d0eb9636}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dict\ArrayDict">
+      <UniqueIdentifier>{411cd175-fb5c-4c66-b78c-16f0affc8945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Traits">
+      <UniqueIdentifier>{99b95b96-c85f-44c8-88b0-379a4625c0c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="F4API">
+      <UniqueIdentifier>{82550a57-872f-4211-a703-43edc8dbed59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Locks.txt" />
+    <Text Include="TODO.txt" />
+  </ItemGroup>
+</Project>

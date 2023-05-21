@@ -1,0 +1,14 @@
+
+StringAttributeAPIExport:
+	storageLock -> registeredLock
+
+ArraysSet:
+arraysLock -> dataLock
+
+SetsSet:
+setsLock -> dataLock
+
+BaseDictsSet:
+dictsLock -> dataLock
+
+dictsLock->arraysLock->dataLock
