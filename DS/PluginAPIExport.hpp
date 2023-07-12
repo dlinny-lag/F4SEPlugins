@@ -3,7 +3,6 @@
 #include "f4se/PapyrusVM.h"
 #include "f4se/PapyrusNativeFunctions.h"
 #include "f4se/PapyrusEvents.h"
-#include "MyTrace.h"
 #include "PapyrusExports.h"
 
 namespace PluginAPIExport
@@ -12,8 +11,8 @@ namespace PluginAPIExport
 
 	const char* pluginName = "DS";
 	const UInt32 pluginUID = 'DS';
-	const UInt32 pluginVersionInt = 0x0090;
-	const char* pluginVersionString = "0.9.0";
+	const UInt32 pluginVersionInt = 0x0091;
+	const char* pluginVersionString = "0.9.1";
 
 	BSFixedString GetVersionString(StaticFunctionTag* _)
 	{
