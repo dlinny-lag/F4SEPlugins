@@ -387,6 +387,7 @@
       <Filter>Shared</Filter>
     </ClInclude>
     <ClInclude Include="LoadManager.h" />
+    <ClInclude Include="IRecordLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="VersionInfo.rc" />

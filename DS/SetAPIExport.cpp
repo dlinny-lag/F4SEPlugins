@@ -38,10 +38,10 @@ namespace SetAPIExport
 
 	void RegisterLoaders()
 	{
-		LoadManager::RegisterRecordLoader(g_IntSetExport.DataId(), [](auto serializer, auto version, auto length){return g_IntSetExport.Load(serializer, version, length);});
-		LoadManager::RegisterRecordLoader(g_FloatSetExport.DataId(), [](auto serializer, auto version, auto length){return g_FloatSetExport.Load(serializer, version, length);});
-		LoadManager::RegisterRecordLoader(g_StringSetExport.DataId(), [](auto serializer, auto version, auto length){return g_StringSetExport.Load(serializer, version, length);});
-		LoadManager::RegisterRecordLoader(g_FormSetExport.DataId(), [](auto serializer, auto version, auto length){return g_FormSetExport.Load(serializer, version, length);});
+		LoadManager::RegisterRecordLoader(&g_IntSetExport);
+		LoadManager::RegisterRecordLoader(&g_FloatSetExport);
+		LoadManager::RegisterRecordLoader(&g_StringSetExport);
+		LoadManager::RegisterRecordLoader(&g_FormSetExport);
 	}
 	
 	bool Register(VirtualMachine* vm)

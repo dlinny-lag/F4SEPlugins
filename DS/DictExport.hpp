@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Iterable.hpp"
+#include "IRecordLoader.h"
 
 namespace DS
 {
@@ -9,7 +10,7 @@ namespace DS
 			UInt32 DICT_ID, int Version, 
 			typename KeysArrayExport, typename KeysSetExport,
 			typename KeyIterator, typename KeyPointer>
-	class DictExport : public Iterable<KEY_TYPE, DICT_TYPE, DictsSet, KeyIterator, KeyPointer>
+	class DictExport : public Iterable<KEY_TYPE, DICT_TYPE, DictsSet, KeyIterator, KeyPointer>, public IRecordLoader
 	{
 	private:
 		std::function<bool(BGSKeyword*, std::vector<KEY_TYPE>&)> assignArray;

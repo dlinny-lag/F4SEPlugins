@@ -93,23 +93,23 @@ namespace ValueDictAPIExport
 
 	void RegisterLoaders()
 	{
-		DS::LoadManager::RegisterRecordLoader(g_IntDictIntExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictIntExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictFloatExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictFloatExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictStringExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictStringExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictFormExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictFormExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictStructExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictStructExport.Load(serializer, version, length);});
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictIntExport);
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictFloatExport);
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictStringExport);
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictFormExport);
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictStructExport);
 
-		DS::LoadManager::RegisterRecordLoader(g_StringDictIntExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictIntExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_StringDictFloatExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictFloatExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_StringDictStringExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictStringExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_StringDictFormExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictFormExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_StringDictStructExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictStructExport.Load(serializer, version, length);});
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictIntExport);
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictFloatExport);
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictStringExport);
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictFormExport);
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictStructExport);
 
-		DS::LoadManager::RegisterRecordLoader(g_FormDictIntExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictIntExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_FormDictFloatExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictFloatExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_FormDictStringExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictStringExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_FormDictFormExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictFormExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_FormDictStructExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictStructExport.Load(serializer, version, length);});
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictIntExport);
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictFloatExport);
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictStringExport);
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictFormExport);
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictStructExport);
 	}
 	
 	bool Register(VirtualMachine* vm)

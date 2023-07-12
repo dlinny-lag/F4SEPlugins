@@ -7,7 +7,7 @@
 
 namespace DS
 {
-	std::unordered_map<UInt32, std::function<bool(const F4SESerializationInterface*, UInt32, UInt32)>> registeredLoaders;
+	std::unordered_map<UInt32, IRecordLoader*> registeredLoaders;
 
 	std::unordered_set<UInt32> GetKeys()
 	{
@@ -18,11 +18,15 @@ namespace DS
 		return retVal;
 	}
 
-	void LoadManager::RegisterRecordLoader(UInt32 recordTag, std::function<bool(const F4SESerializationInterface*, UInt32, UInt32)> recordLoader)
+	void LoadManager::RegisterRecordLoader(IRecordLoader* loader)
 	{
-		// TODO: check overwriting
-		registeredLoaders[recordTag] = std::move(recordLoader);
+		const UInt32 recordTag = loader->DataId();
+		if (registeredLoaders.find(recordTag) == registeredLoaders.end())
+			registeredLoaders[recordTag] = loader;
+		else
+			E("Duplicated registration for tag %.4s", &recordTag);
 	}
+
 	void LoadManager::LoadRecords(const F4SESerializationInterface* serializer)
 	{
 		std::unordered_set<UInt32> unusedLoaders = GetKeys();
@@ -37,7 +41,7 @@ namespace DS
 				continue;
 			}
 			unusedLoaders.erase(recType);
-			if (!loaderPtr->second(serializer, curVersion, length))
+			if (!loaderPtr->second->Load(serializer, curVersion, length))
 			{
 				W("Record loader for tag '%.4s' failed", &recType);
 			}

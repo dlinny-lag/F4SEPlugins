@@ -6,11 +6,11 @@
 #include "ElementConverter.hpp"
 #include "PapyrusExports.h"
 #include <optional>
-
+#include "IRecordLoader.h"
 namespace DS
 {
 	template <typename ELEMENT_TYPE, typename ArraySet, const char* PAPYRUS_NAME, typename Derived, typename OUTER_ELEMENT_TYPE=ELEMENT_TYPE>
-	class ArrayExport
+	class ArrayExport : public IRecordLoader
 	{
 	private:
 		const char* elementTypeName;

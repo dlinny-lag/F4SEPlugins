@@ -7,12 +7,13 @@
 #include "Iterator.hpp"
 #include "PapyrusExports.h"
 #include "Iterable.hpp"
+#include "IRecordLoader.h"
 
 namespace DS
 {
 	template<typename ELEMENT_TYPE, UInt32 SET_ID, const char* PAPYRUS_NAME, typename Iterator, typename Pointer, typename ArrayExport,
 	typename SET_TYPE=Set<ELEMENT_TYPE, std::unordered_set<ELEMENT_TYPE>>>
-	class SetExport final : public Iterable<ELEMENT_TYPE, SET_TYPE, SetsSet<ELEMENT_TYPE, SET_TYPE>, Iterator, Pointer>
+	class SetExport final : public Iterable<ELEMENT_TYPE, SET_TYPE, SetsSet<ELEMENT_TYPE, SET_TYPE>, Iterator, Pointer>, public IRecordLoader
 	{
 		typedef SetExport<ELEMENT_TYPE, SET_ID, PAPYRUS_NAME, Iterator, Pointer, ArrayExport, SET_TYPE> ThisType;
 	private:

@@ -199,6 +199,7 @@
     <ClInclude Include="ArrayDict.hpp" />
     <ClInclude Include="DictExport.hpp" />
     <ClInclude Include="ElementConverter.hpp" />
+    <ClInclude Include="IRecordLoader.h" />
     <ClInclude Include="Iterable.hpp" />
     <ClInclude Include="KeyValidator.hpp" />
     <ClInclude Include="LoadManager.h" />

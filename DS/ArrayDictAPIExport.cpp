@@ -89,23 +89,23 @@ namespace ArrayDictAPIExport
 
 	void RegisterLoaders()
 	{
-		DS::LoadManager::RegisterRecordLoader(g_IntDictIntArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictIntArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictFloatArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictFloatArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictStringArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictStringArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictFormArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictFormArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictStructArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictStructArrayExport.Load(serializer, version, length);});
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictIntArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictFloatArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictStringArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictFormArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_IntDictStructArrayExport);
 
-		DS::LoadManager::RegisterRecordLoader(g_StringDictIntArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictIntArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_StringDictFloatArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictFloatArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_StringDictFormArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictFormArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_IntDictFormArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_IntDictFormArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_StringDictStructArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_StringDictStructArrayExport.Load(serializer, version, length);});
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictIntArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictFloatArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictStringArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictFormArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_StringDictStructArrayExport);
 
-		DS::LoadManager::RegisterRecordLoader(g_FormDictIntArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictIntArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_FormDictFloatArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictFloatArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_FormDictStringArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictStringArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_FormDictFormArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictFormArrayExport.Load(serializer, version, length);});
-		DS::LoadManager::RegisterRecordLoader(g_FormDictStructArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_FormDictStructArrayExport.Load(serializer, version, length);});
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictIntArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictFloatArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictStringArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictFormArrayExport);
+		DS::LoadManager::RegisterRecordLoader(&g_FormDictStructArrayExport);
 	}
 
 	bool Register(VirtualMachine* vm)

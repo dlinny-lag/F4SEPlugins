@@ -39,11 +39,11 @@ namespace ArrayAPIExport
 
 	void RegisterLoaders()
 	{
-		LoadManager::RegisterRecordLoader(g_IntArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_IntArrayExport.Load(serializer, version, length);});
-		LoadManager::RegisterRecordLoader(g_FloatArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_FloatArrayExport.Load(serializer, version, length);});
-		LoadManager::RegisterRecordLoader(g_StringArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_StringArrayExport.Load(serializer, version, length);});
-		LoadManager::RegisterRecordLoader(g_FormArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_FormArrayExport.Load(serializer, version, length);});
-		LoadManager::RegisterRecordLoader(g_StructArrayExport.DataId(), [](auto serializer, auto version, auto length){return g_StructArrayExport.Load(serializer, version, length);});
+		LoadManager::RegisterRecordLoader(&g_IntArrayExport);
+		LoadManager::RegisterRecordLoader(&g_FloatArrayExport);
+		LoadManager::RegisterRecordLoader(&g_StringArrayExport);
+		LoadManager::RegisterRecordLoader(&g_FormArrayExport);
+		LoadManager::RegisterRecordLoader(&g_StructArrayExport);
 	}
 
 	bool Register(VirtualMachine* vm)
