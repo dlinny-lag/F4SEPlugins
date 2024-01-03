@@ -26,9 +26,9 @@
 
 #define DECLARE_PRIMITIVE_ARRAY_DICT(Variable, KeyType, ValueType, DictTypeId, Version, KeyTypeName, ValueTypeName) \
 	inline char AS_IS(##KeyTypeName##)Dict##ValueTypeName##Array_ScriptName[] = BUILD_SCRIPT_NAME(KeyTypeName, ValueTypeName); \
-	DECLARE_STRUCT_GLOBAL(##KeyTypeName##Dict##ValueTypeName##Array, KeyIterator, BUILD_SCRIPT_NAME(Int, Int)) \
-	DECLARE_STRUCT_GLOBAL(##KeyTypeName##Dict##ValueTypeName##Array, KeyPointer, BUILD_SCRIPT_NAME(Int, Int)) \
-	DECLARE_STRUCT_GLOBAL(##KeyTypeName##Dict##ValueTypeName##Array, Result, BUILD_SCRIPT_NAME(Int, Int)) \
+	DECLARE_STRUCT_GLOBAL(##KeyTypeName##Dict##ValueTypeName##Array, KeyIterator, BUILD_SCRIPT_NAME(KeyTypeName, ValueTypeName)) \
+	DECLARE_STRUCT_GLOBAL(##KeyTypeName##Dict##ValueTypeName##Array, KeyPointer, BUILD_SCRIPT_NAME(KeyTypeName, ValueTypeName)) \
+	DECLARE_STRUCT_GLOBAL(##KeyTypeName##Dict##ValueTypeName##Array, Result, BUILD_SCRIPT_NAME(KeyTypeName, ValueTypeName)) \
 	typedef PrimitiveArrayDictExport<KeyType, ValueType, DictTypeId, Version, \
 			##KeyTypeName##Dict##ValueTypeName##Array_ScriptName, \
 			ArrayAPIExport::##KeyTypeName##ArrayExport, SetAPIExport::##KeyTypeName##SetExport, ArrayAPIExport::##ValueTypeName##ArrayExport, \
