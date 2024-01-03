@@ -73,11 +73,6 @@ namespace DS
 			REGISTER_FUNC(vm, PAPYRUS_NAME, AppendArray, 3);
 			REGISTER_FUNC(vm, PAPYRUS_NAME, CopyToArray, 3);
 		}
-	public: // override base methods to resolve ambiguity with static methods
-		std::optional<VMValue> GetElement(BGSKeyword* identifier, KEY_TYPE key, UInt32 index) override
-		{
-			return ArrayDictExport::GetElement(identifier, key, index);
-		}
 	protected:
 		void LogLoading() override
 		{
@@ -88,12 +83,12 @@ namespace DS
 			D("Saving %sDictStructArray", DictExport::keyTypeName);
 		}
 	private: // static methods to be invoked from VM
-		static bool Create(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString structName)
+		static bool VMCreate(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString structName)
 		{
 			return ArrayDictExport::singleton->Create(identifier, structName);
 		}
 
-		static VMVariable GetElement(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, UInt32 index)
+		static VMVariable VMGetElement(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, UInt32 index)
 		{
 			std::optional<VMValue> result = ArrayDictExport::singleton->ArrayDictExport::GetElement(identifier, key, index);
 			VMVariable retVal;
@@ -109,22 +104,22 @@ namespace DS
 			return retVal;
 		}
 
-		static SInt32 IndexOf(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, BSFixedString fieldName, VMVariable value, SInt32 startIndex)
+		static SInt32 VMIndexOf(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, BSFixedString fieldName, VMVariable value, SInt32 startIndex)
 		{
 			return ArrayDictExport::singleton->IndexOf(identifier, key, fieldName, value.GetValue(), startIndex);
 		}
 
-		static bool SortArray(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, BSFixedString fieldName, UInt32 mode)
+		static bool VMSortArray(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, BSFixedString fieldName, UInt32 mode)
 		{
 			return ArrayDictExport::singleton->SortArray(identifier, key, fieldName, mode);
 		}
 
-		static bool AppendArray(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, BGSKeyword* arrayId)
+		static bool VMAppendArray(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, BGSKeyword* arrayId)
 		{
 			return ArrayDictExport::singleton->AppendArray(identifier, key, arrayId);
 		}
 
-		static bool CopyToArray(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, BGSKeyword* targetArrayId)
+		static bool VMCopyToArray(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key, BGSKeyword* targetArrayId)
 		{
 			return ArrayDictExport::singleton->CopyToArray(identifier, key, targetArrayId);
 		}

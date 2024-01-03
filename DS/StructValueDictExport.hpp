@@ -43,11 +43,6 @@ namespace DS
 			REGISTER_FUNC(vm, PAPYRUS_NAME, Create, 2);
 			REGISTER_FUNC(vm, PAPYRUS_NAME, Get, 2);
 		}
-	public: // override base methods to resolve ambiguity with static methods
-		std::optional<VMValue> Get(BGSKeyword* identifier, KEY_TYPE key) override
-		{
-			return ValueDictExport::Get(identifier, key);
-		}
 	protected:
 		void LogLoading() override
 		{
@@ -58,12 +53,12 @@ namespace DS
 			D("Saving %sDictStruct", DictExport::keyTypeName);
 		}
 	private: // static methods to be called from VM
-		static bool Create(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString structName)
+		static bool VMCreate(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString structName)
 		{
 			return ValueDictExport::singleton->Create(identifier, structName);
 		}
 
-		static VMVariable Get(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key)
+		static VMVariable VMGet(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key)
 		{
 			const std::optional<VMValue> result = ValueDictExport::singleton->ValueDictExport::Get(identifier, key);
 			if (result.has_value())

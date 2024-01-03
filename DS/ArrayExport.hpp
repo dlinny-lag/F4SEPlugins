@@ -139,22 +139,22 @@ namespace DS
 	private: // static methods for calling from VM
 
 
-		static bool Delete(StaticFunctionTag* _, BGSKeyword* identifier)
+		static bool VMDelete(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Delete(identifier);
 		}
 
-		static UInt32 Size(StaticFunctionTag* _, BGSKeyword* identifier)
+		static UInt32 VMSize(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Size(identifier);
 		}
 
-		static bool Add(StaticFunctionTag* _, BGSKeyword* identifier, OUTER_ELEMENT_TYPE value)
+		static bool VMAdd(StaticFunctionTag* _, BGSKeyword* identifier, OUTER_ELEMENT_TYPE value)
 		{
 			return singleton->Add(identifier, conv.FromOuter(value));
 		}
 
-		static bool AddRange(StaticFunctionTag* _, BGSKeyword* identifier, VMArray<OUTER_ELEMENT_TYPE> toAdd)
+		static bool VMAddRange(StaticFunctionTag* _, BGSKeyword* identifier, VMArray<OUTER_ELEMENT_TYPE> toAdd)
 		{
 			// TODO: move conversion to a function
 			std::vector<ELEMENT_TYPE> arr;
@@ -168,12 +168,12 @@ namespace DS
 			return singleton->AddRange(identifier, arr);
 		}
 
-		static bool AppendArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* toAdd)
+		static bool VMAppendArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* toAdd)
 		{
 			return singleton->AppendArray(identifier, toAdd);
 		}
 
-		static OUTER_ELEMENT_TYPE Get(StaticFunctionTag* _, BGSKeyword* identifier, SInt32 index)
+		static OUTER_ELEMENT_TYPE VMGet(StaticFunctionTag* _, BGSKeyword* identifier, SInt32 index)
 		{
 			const std::optional<ELEMENT_TYPE> val = singleton->Get(identifier, index);
 			if (val.has_value())
@@ -181,32 +181,32 @@ namespace DS
 			return {};  // return default value
 		}
 
-		static bool Set(StaticFunctionTag* _, BGSKeyword* identifier, SInt32 index, OUTER_ELEMENT_TYPE value)
+		static bool VMSet(StaticFunctionTag* _, BGSKeyword* identifier, SInt32 index, OUTER_ELEMENT_TYPE value)
 		{
 			return singleton->Set(identifier, index, conv.FromOuter(value));
 		}
 
-		static bool Insert(StaticFunctionTag* _, BGSKeyword* identifier, OUTER_ELEMENT_TYPE value, SInt32 index)
+		static bool VMInsert(StaticFunctionTag* _, BGSKeyword* identifier, OUTER_ELEMENT_TYPE value, SInt32 index)
 		{
 			return singleton->Insert(identifier, conv.FromOuter(value), index);
 		}
 		
-		static bool Remove(StaticFunctionTag* _, BGSKeyword* identifier, SInt32 index)
+		static bool VMRemove(StaticFunctionTag* _, BGSKeyword* identifier, SInt32 index)
 		{
 			return singleton->Remove(identifier, index);
 		}
 
-		static UInt32 Clear(StaticFunctionTag* _, BGSKeyword* identifier)
+		static UInt32 VMClear(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Clear(identifier);
 		}
 
-		static void DumpAll(StaticFunctionTag* _)
+		static void VMDumpAll(StaticFunctionTag* _)
 		{
 			 singleton->DumpAll();
 		}
 
-		static void Dump(StaticFunctionTag* _, BGSKeyword* identifier)
+		static void VMDump(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			 singleton->Dump(identifier);
 		}

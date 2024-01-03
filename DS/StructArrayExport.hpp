@@ -51,17 +51,17 @@ namespace DS
 
 	private: // static methods for calling from VM
 
-		static bool Create(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString structName)
+		static bool VMCreate(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString structName)
 		{
 			return singleton->Create(identifier, structName);
 		}
 
-		static SInt32 IndexOf(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString fieldName, VMVariable value, SInt32 startIndex)
+		static SInt32 VMIndexOf(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString fieldName, VMVariable value, SInt32 startIndex)
 		{
 			return singleton->IndexOf(identifier, fieldName, value.GetValue(), startIndex);
 		}
 
-		static bool Sort(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString fieldName, UInt32 mode)
+		static bool VMSort(StaticFunctionTag* _, BGSKeyword* identifier, BSFixedString fieldName, UInt32 mode)
 		{
 			return singleton->Sort(identifier, fieldName, mode);
 		}

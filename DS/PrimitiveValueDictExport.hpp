@@ -39,17 +39,13 @@ namespace DS
 			REGISTER_FUNC(vm, PAPYRUS_NAME, Create, 1);
 			REGISTER_FUNC(vm, PAPYRUS_NAME, Get, 2);
 		}
-	public: // override base methods to resolve ambiguity with static methods
-		std::optional<VALUE_TYPE> Get(BGSKeyword* identifier, KEY_TYPE key) override
-		{
-			return ValueDictExport::Get(identifier, key);
-		}
+
 	private:
-		static bool Create(StaticFunctionTag* _, BGSKeyword* identifier)
+		static bool VMCreate(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Create(identifier);
 		}
-		static Result Get(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key)
+		static Result VMGet(StaticFunctionTag* _, BGSKeyword* identifier, KEY_TYPE key)
 		{
 			const std::optional<VALUE_TYPE> result = singleton->ValueDictExport::Get(identifier, key);
 			Result retVal;

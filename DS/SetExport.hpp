@@ -236,41 +236,41 @@ namespace DS
 		}
 
 	private: // static methods to call from VM
-		static Iterator CreateIterator(StaticFunctionTag* _, BGSKeyword* identifier)
+		static Iterator VMCreateIterator(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Iterable::CreateIterator(identifier);
 		}
-		static bool DeleteIterator(StaticFunctionTag* _, Iterator iterator)
+		static bool VMDeleteIterator(StaticFunctionTag* _, Iterator iterator)
 		{
 			return singleton->Iterable::DeleteIterator(iterator);
 		}
 
-		static Pointer Next(StaticFunctionTag* _, Iterator iterator)
+		static Pointer VMNext(StaticFunctionTag* _, Iterator iterator)
 		{
 			return singleton->Iterable::Next(iterator);
 		}
 
-		static bool Create(StaticFunctionTag* _, BGSKeyword* identifier)
+		static bool VMCreate(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Create(identifier);
 		}
 
-		static bool Delete(StaticFunctionTag* _, BGSKeyword* identifier)
+		static bool VMDelete(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Delete(identifier);
 		}
 
-		static UInt32 Size(StaticFunctionTag* _, BGSKeyword* identifier)
+		static UInt32 VMSize(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Size(identifier);
 		}
 
-		static bool Add(StaticFunctionTag* _, BGSKeyword* identifier, ELEMENT_TYPE value)
+		static bool VMAdd(StaticFunctionTag* _, BGSKeyword* identifier, ELEMENT_TYPE value)
 		{
 			return singleton->Add(identifier, value);
 		}
 
-		static SInt32 AddRange(StaticFunctionTag* _, BGSKeyword* identifier, VMArray<ELEMENT_TYPE> toAdd)
+		static SInt32 VMAddRange(StaticFunctionTag* _, BGSKeyword* identifier, VMArray<ELEMENT_TYPE> toAdd)
 		{ // TODO: move conversion to a function
 			std::vector<ELEMENT_TYPE> arr;
 			arr.reserve(toAdd.Length());
@@ -284,7 +284,7 @@ namespace DS
 			return singleton->AddRange(identifier, arr);
 		}
 
-		static SInt32 RemoveRange(StaticFunctionTag* _, BGSKeyword* identifier, VMArray<ELEMENT_TYPE> toRemove)
+		static SInt32 VMRemoveRange(StaticFunctionTag* _, BGSKeyword* identifier, VMArray<ELEMENT_TYPE> toRemove)
 		{// TODO: move conversion to a function
 			std::vector<ELEMENT_TYPE> arr;
 			arr.reserve(toRemove.Length());
@@ -297,7 +297,7 @@ namespace DS
 			return singleton->RemoveRange(identifier, arr);
 		}
 
-		static bool Intersect(StaticFunctionTag* _, BGSKeyword* identifier, VMArray<ELEMENT_TYPE> other)
+		static bool VMIntersect(StaticFunctionTag* _, BGSKeyword* identifier, VMArray<ELEMENT_TYPE> other)
 		{
 			// TODO: move conversion to a function
 			std::vector<ELEMENT_TYPE> arr;
@@ -311,57 +311,57 @@ namespace DS
 			return singleton->Intersect(identifier, arr);
 		}
 
-		static bool Contains(StaticFunctionTag* _, BGSKeyword* identifier, ELEMENT_TYPE value)
+		static bool VMContains(StaticFunctionTag* _, BGSKeyword* identifier, ELEMENT_TYPE value)
 		{
 			return singleton->Contains(identifier, value);
 		}
 
-		static bool Remove(StaticFunctionTag* _, BGSKeyword* identifier, ELEMENT_TYPE value)
+		static bool VMRemove(StaticFunctionTag* _, BGSKeyword* identifier, ELEMENT_TYPE value)
 		{
 			return singleton->Remove(identifier, value);
 		}
 
-		static bool CopyToArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* arrayId)
+		static bool VMCopyToArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* arrayId)
 		{
 			return singleton->CopyToArray(identifier, arrayId);
 		}
 
-		static SInt32 AddArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* arrayId)
+		static SInt32 VMAddArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* arrayId)
 		{
 			return singleton->AddArray(identifier, arrayId);
 		}
 
-		static SInt32 AddSet(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* setId)
+		static SInt32 VMAddSet(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* setId)
 		{
 			return singleton->AddSet(identifier, setId);
 		}
 
-		static bool IntersectArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* arrayId)
+		static bool VMIntersectArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* arrayId)
 		{
 			return singleton->IntersectArray(identifier, arrayId);
 		}
 
-		static bool IntersectSet(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* setId)
+		static bool VMIntersectSet(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* setId)
 		{
 			return singleton->IntersectSet(identifier, setId);
 		}
 
-		static SInt32 RemoveArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* arrayId)
+		static SInt32 VMRemoveArray(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* arrayId)
 		{
 			return singleton->RemoveArray(identifier, arrayId);
 		}
 
-		static SInt32 RemoveSet(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* setId)
+		static SInt32 VMRemoveSet(StaticFunctionTag* _, BGSKeyword* identifier, BGSKeyword* setId)
 		{
 			return singleton->RemoveSet(identifier, setId);
 		}
 
-		static UInt32 Clear(StaticFunctionTag* _, BGSKeyword* identifier)
+		static UInt32 VMClear(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Clear(identifier);
 		}
 		
-		static VMArray<ELEMENT_TYPE> ToArray(StaticFunctionTag* _, BGSKeyword* identifier)
+		static VMArray<ELEMENT_TYPE> VMToArray(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			// TODO: move conversion to a function
 			VMArray<ELEMENT_TYPE> retVal;
@@ -377,11 +377,11 @@ namespace DS
 			return retVal;
 		}
 		
-		static void DumpAll(StaticFunctionTag* _)
+		static void VMDumpAll(StaticFunctionTag* _)
 		{
 			return singleton->DumpAll();
 		}
-		static void Dump(StaticFunctionTag* _, BGSKeyword* identifier)
+		static void VMDump(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Dump(identifier);
 		}

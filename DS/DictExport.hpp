@@ -33,7 +33,7 @@ namespace DS
 			,dicts(DICT_ID, Version)
 		{}
 
-		virtual bool Delete(BGSKeyword* identifier)
+		bool Delete(BGSKeyword* identifier)
 		{
 			const bool retVal = dicts.DeleteDict(identifier);
 			if (retVal)
@@ -41,15 +41,15 @@ namespace DS
 			return retVal;
 		}
 
-		virtual SInt32 Size(BGSKeyword* identifier)
+		SInt32 Size(BGSKeyword* identifier)
 		{
 			return dicts.Size(identifier);
 		}
-		virtual bool Contains(BGSKeyword* identifier, KEY_TYPE key)
+		bool Contains(BGSKeyword* identifier, KEY_TYPE key)
 		{
 			return dicts.Contains(identifier, key);
 		}
-		virtual bool Remove(BGSKeyword* identifier, KEY_TYPE key)
+		bool Remove(BGSKeyword* identifier, KEY_TYPE key)
 		{
 			const bool retVal = dicts.Remove(identifier, key);
 			if (retVal)
@@ -63,22 +63,22 @@ namespace DS
 				Iterable::iterators.Dump(identifier->formID, 0);
 		}
 
-		virtual bool CopyKeysToArray(BGSKeyword* identifier, BGSKeyword* arrayId)
+		bool CopyKeysToArray(BGSKeyword* identifier, BGSKeyword* arrayId)
 		{
 			return dicts.CopyKeysToArray(identifier, arrayId, assignArray);
 		}
 
-		virtual bool CopyKeysToSet(BGSKeyword* identifier, BGSKeyword* setId)
+		bool CopyKeysToSet(BGSKeyword* identifier, BGSKeyword* setId)
 		{
 			return dicts.CopyKeysToSet(identifier, setId, assignSet);
 		}
 
-		virtual SInt32 RemoveKeysByArray(BGSKeyword* identifier, BGSKeyword* arrayId)
+		SInt32 RemoveKeysByArray(BGSKeyword* identifier, BGSKeyword* arrayId)
 		{
 			return dicts.RemoveKeysByArray(identifier, arrayId, getArray);
 		}
 
-		virtual SInt32 RemoveKeysBySet(BGSKeyword* identifier, BGSKeyword* setId)
+		SInt32 RemoveKeysBySet(BGSKeyword* identifier, BGSKeyword* setId)
 		{
 			return dicts.RemoveKeysBySet(identifier, setId, getSet);
 		}

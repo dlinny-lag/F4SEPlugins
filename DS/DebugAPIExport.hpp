@@ -13,13 +13,13 @@ namespace DebugAPIExport
 {
 	const char* EXPORT_PAPYRUS_SCRIPT = "DS:Debug";
 
-	void LogToConsole(StaticFunctionTag* _, bool enable)
+	void VMLogToConsole(StaticFunctionTag* _, bool enable)
 	{
 		LogSettings::SetTraceToConsole(enable);
 		_MESSAGE("TraceToConsole=%s", S(LogSettings::TraceToConsole));
 	}
 
-	void SetLogLevel(StaticFunctionTag* _, UInt32 level)
+	void VMSetLogLevel(StaticFunctionTag* _, UInt32 level)
 	{
 		if (level < LogSettings::MyLogLevel::None)
 			level = LogSettings::MyLogLevel::None;
@@ -30,7 +30,7 @@ namespace DebugAPIExport
 		_MESSAGE("LogLevel = %d", LogSettings::LogLevel);
 	}
 
-	void Dump(StaticFunctionTag* _)
+	void VMDump(StaticFunctionTag* _)
 	{
 		ArrayAPIExport::DumpAll();
 		SetAPIExport::DumpAll();
@@ -38,7 +38,7 @@ namespace DebugAPIExport
 		ArrayDictAPIExport::DumpAll();
 	}
 
-	void Print(StaticFunctionTag* _, BSFixedString message)
+	void VMPrint(StaticFunctionTag* _, BSFixedString message)
 	{
 		Dmp("%s", message.c_str());
 	}

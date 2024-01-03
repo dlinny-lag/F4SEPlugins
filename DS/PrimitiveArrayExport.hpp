@@ -61,20 +61,20 @@ namespace DS
 		}
 
 	private: // static methods for calling from VM
-		static bool Create(StaticFunctionTag* _, BGSKeyword* identifier)
+		static bool VMCreate(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			return singleton->Create(identifier);
 		}
-		static SInt32 IndexOf(StaticFunctionTag* _, BGSKeyword* identifier, ELEMENT_TYPE value, SInt32 startIndex)
+		static SInt32 VMIndexOf(StaticFunctionTag* _, BGSKeyword* identifier, ELEMENT_TYPE value, SInt32 startIndex)
 		{
 			return singleton->IndexOf(identifier, value, startIndex);
 		}
-		static bool Sort(StaticFunctionTag* _, BGSKeyword* identifier, UInt32 mode)
+		static bool VMSort(StaticFunctionTag* _, BGSKeyword* identifier, UInt32 mode)
 		{
 			return singleton->Sort(identifier, mode);
 		}
 		
-		static VMArray<ELEMENT_TYPE> ToArray(StaticFunctionTag* _, BGSKeyword* identifier)
+		static VMArray<ELEMENT_TYPE> VMToArray(StaticFunctionTag* _, BGSKeyword* identifier)
 		{
 			// TODO: move conversion to a function
 			VMArray<ELEMENT_TYPE> retVal;
