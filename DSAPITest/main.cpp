@@ -8,7 +8,16 @@
 #include "TestRunner.h"
 #include "MyTrace.h"
 
-#define REQUIRED_RUNTIME RUNTIME_VERSION_1_10_163
+#if F4SE_PRE_DECLARATIVE_LOAD
+	#define REQUIRED_RUNTIME RUNTIME_VERSION_1_10_163
+#endif
+#if _F4SE_DECLARATIVE_LOAD
+	#define REQUIRED_RUNTIME RUNTIME_VERSION_1_10_984
+#endif
+
+#ifndef REQUIRED_RUNTIME
+	#error Invalid project configuration
+#endif
 
 constexpr UInt32 pluginUID = 'DSTS'; // DS Test
 
@@ -46,21 +55,56 @@ bool RegisterExportingFunctions(VirtualMachine* vm)
 	vm->RegisterFunction(new NativeFunction0("StartTest", "DSTest:Runner", StartTest, vm));
 	return true;
 }
-
+void InitLogs()
+{
+	IDebugLog::OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Fallout4\\F4SE\\DSTest.log");
+	LogSettings::SetLogLevel(LogSettings::Debug);
+	LogSettings::SetTraceToConsole(true);
+}
 extern "C"
 {
-	bool F4SEPlugin_Query(const F4SEInterface * f4se, PluginInfo * info)
+#if F4SE_PRE_DECLARATIVE_LOAD
+	__declspec(dllexport) bool F4SEPlugin_Query(const F4SEInterface * f4se, PluginInfo * info)
 	{
-		IDebugLog::OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Fallout4\\F4SE\\DSTest.log");
-		LogSettings::SetLogLevel(LogSettings::Debug);
-		LogSettings::SetTraceToConsole(true);
-
+		InitLogs();
 		// populate info structure
 		info->infoVersion = PluginInfo::kInfoVersion;
 		info->name = "DSTest";
 		info->version = 1;
 
-		// store plugin handle so we can identify ourselves later
+
+		_MESSAGE("F4SEPlugin_Query successful.");
+		return true;
+	}
+#endif
+
+#if _F4SE_DECLARATIVE_LOAD
+	__declspec(dllexport) F4SEPluginVersionData F4SEPlugin_Version =
+	{
+		F4SEPluginVersionData::kVersion,
+		
+		1,
+		"F4DS Tests",
+		"Dlinny_Lag",
+
+		F4SEPluginVersionData::kAddressIndependence_AddressLibrary_1_10_980,
+		F4SEPluginVersionData::kStructureIndependence_1_10_980Layout,
+		{ REQUIRED_RUNTIME, 0 },
+		0,
+		0,
+		0,
+		{0}
+	};
+
+#endif
+
+	__declspec(dllexport) bool F4SEPlugin_Load(const F4SEInterface * f4se)
+	{
+#if _F4SE_DECLARATIVE_LOAD
+		// logs was not initialized at F4SEPlugin_Query
+		InitLogs();
+#endif
+
 		g_pluginHandle = f4se->GetPluginHandle();
 
 		if(f4se->isEditor)
@@ -95,12 +139,7 @@ extern "C"
 			_ERROR("Failed to get F4SESerializationInterface");
 			return false;
 		}
-		_MESSAGE("F4SEPlugin_Query successful.");
-		return true;
-	}
 
-	bool F4SEPlugin_Load(const F4SEInterface * f4se)
-	{
 		g_messaging->RegisterListener(g_pluginHandle, "F4SE", F4SEMessageCallback);
 
 		// register papyrus exports

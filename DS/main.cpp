@@ -119,14 +119,18 @@ void F4SEMessageCallback(F4SEMessagingInterface::Message* msg)
 	}
 }
 
+void InitLogs()
+{
+	IDebugLog::OpenRelative(CSIDL_MYDOCUMENTS, R"(\My Games\Fallout4\F4SE\DS.log)");
+	LogSettings::Init("F4DS");
+}
+
 extern "C"
 {
 #if F4SE_PRE_DECLARATIVE_LOAD
 	__declspec(dllexport) bool F4SEPlugin_Query(const F4SEInterface * f4se, PluginInfo * info)
 	{
-		IDebugLog::OpenRelative(CSIDL_MYDOCUMENTS, R"(\My Games\Fallout4\F4SE\DS.log)");
-		LogSettings::Init("F4DS");
-
+		InitLogs();
 		// populate info structure
 		info->infoVersion = PluginInfo::kInfoVersion;
 		info->name = PluginAPIExport::pluginName;
@@ -160,8 +164,7 @@ extern "C"
 	{
 #if _F4SE_DECLARATIVE_LOAD
 		// logs was not initialized at F4SEPlugin_Query
-		IDebugLog::OpenRelative(CSIDL_MYDOCUMENTS, R"(\My Games\Fallout4\F4SE\DS.log)");
-		LogSettings::Init("F4DS");
+		InitLogs();
 #endif
 
 		g_pluginHandle = f4se->GetPluginHandle();
