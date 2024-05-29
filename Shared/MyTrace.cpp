@@ -130,7 +130,11 @@ void ConsolePrintV(const char* fmt, va_list args)
 	ConsoleManager* mgr = *g_console;
 	if (mgr)
 	{
+#if _F4SE_DECLARATIVE_LOAD // function name was changed along with other changes
+		CALL_MEMBER_FN(mgr, PrintVArgs)(fmt, args);
+#else
 		CALL_MEMBER_FN(mgr, VPrint)(fmt, args);
+#endif
 	}
 }
 
