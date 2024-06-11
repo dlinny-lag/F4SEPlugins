@@ -3,13 +3,16 @@
 #include "f4se/PluginAPI.h"
 #include <vector>
 
+#ifndef _DEBUG
+// sizeof std::vector in debug build is not equal to sizeof in release build
+// just don't use it in debug build
 namespace Notifications // version 1
 { 
 	// AAI1
 	constexpr UInt32 AttributeIncrementMessageType1 = 'AAI1';
 	// AAD1
 	constexpr UInt32 AttributeDecrementMessageType1 = 'AAD1';
- 	struct Change1 
+ 	struct Change1 // deprecated and no longer used since 0.9.0
 	{
 		std::vector<TESForm*> senders; // NOTE: might contain nullptrs
 		Actor* Actor;
@@ -26,6 +29,7 @@ namespace Notifications // version 1
 	static_assert(sizeof(Change1) == 0x38);
 #endif
 };
+#endif
 
 namespace Notifications // version 2
 { 
@@ -110,10 +114,13 @@ namespace Notifications
 		return change;
 	}
 
+#ifndef _DEBUG
 	inline const Change1* GetAsVersion1(const F4SEMessagingInterface::Message* msg)
 	{
 		return ChangeMessageAs<Change1, 1>(msg);
 	}
+#endif
+
 	inline const Change2* GetAsVersion2(const F4SEMessagingInterface::Message* msg)
 	{
 		return ChangeMessageAs<Change2, 2>(msg);
