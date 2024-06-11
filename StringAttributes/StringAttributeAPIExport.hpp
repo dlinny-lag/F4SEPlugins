@@ -18,8 +18,8 @@ namespace StringAttributeAPIExport
 	const char* EXPORT_PAPYRUS_SCRIPT = StringAttributes_PAPYRUS_SCRIPT;
 	const char* pluginName = "StringAttributes";
 	const UInt32 pluginUID = 'F4SA';
-	const UInt32 pluginVersionInt = 0x0050;
-	const char* pluginVersionString = "0.5.0";
+	const UInt32 pluginVersionInt = 0x0051;
+	const char* pluginVersionString = "0.5.1";
 
 	UInt32 GetVersion(StaticFunctionTag* _)
 	{
