@@ -35,7 +35,7 @@ std::vector<AttributeInfo> AttributesManager::GetRegistrationInfo(VMArray<ActorV
 }
 std::vector<ActorValueInfo*> AttributesManager::GetRegisteredAttributes()
 {
-	BSReadLocker lock(&attributesLock);
+	BSWriteLocker lock(&attributesLock);
 	return attributesStorage.GetSorted();
 }
 
