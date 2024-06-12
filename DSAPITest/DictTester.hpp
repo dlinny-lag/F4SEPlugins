@@ -13,6 +13,7 @@ namespace Testers
 		Dict dict;
 		const TestDataProvider<KeyType>& keysProvider;
 		const TestDataProvider<ValueType>& valuesProvider;
+		const bool apiValid;
 		BaseDictTester(std::string keyName, std::string valueName, BGSKeyword* id, Dict accessor, const TestDataProvider<KeyType>& keysProvider, const TestDataProvider<ValueType>& valuesProvider)
 			:dataValid(true)
 			,keyName(keyName)
@@ -21,6 +22,7 @@ namespace Testers
 			,dict(accessor)
 			,keysProvider(keysProvider)
 			,valuesProvider(valuesProvider)
+			,apiValid(dict.Version > 0)
 		{
 			
 		}
@@ -31,6 +33,11 @@ namespace Testers
 			if (!dataValid)
 			{
 				E("%sDict%s: Can't test with invalid data", keyName.c_str(), valueName.c_str());
+				return;
+			}
+			if (!apiValid)
+			{
+				E("%sDict%s: Can't test with no methods initialized", keyName.c_str(), valueName.c_str());
 				return;
 			}
 			PerformInternal(needCancel);

@@ -14,12 +14,14 @@ namespace Testers
 		BGSKeyword* id;
 		Set set;
 		const TestDataProvider<ELEMENT_TYPE>& provider;
+		const bool apiValid;
 	public:
 		SetTester(std::string elementName, BGSKeyword* id, const Set& accessor, const TestDataProvider<ELEMENT_TYPE>& provider)
 			:elementName(std::move(elementName))
 			,id(id)
 			,set(accessor)
 			,provider(provider)
+			,apiValid(set.Version > 0)
 		{
 			
 		}
@@ -27,6 +29,11 @@ namespace Testers
 
 		void Perform(const volatile bool* needCancel)
 		{
+			if (!apiValid)
+			{
+				E("%sSet: Can't test with no methods initialized", elementName.c_str());
+				return;
+			}
 			PerformInternal(needCancel);
 			if (*needCancel) return;
 			CleanUp();

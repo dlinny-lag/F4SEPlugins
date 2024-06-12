@@ -38,7 +38,7 @@ void Serialization_Revert(const F4SESerializationInterface* intfc)
 
 void F4SEMessageCallback(F4SEMessagingInterface::Message* msg)
 {
-	if (msg->type == F4SEMessagingInterface::kMessage_PostLoad)
+	if (msg->type == F4SEMessagingInterface::kMessage_PostPostLoad)
 	{
 		DSAPI::RegisterForAccessorsReceiving(g_messaging, g_pluginHandle, DSMessageHandler);
 		Test::InitiateAccessorsInitialization();

@@ -19,6 +19,7 @@ namespace Testers
 		Array array;
 		bool dataValid;
 		const TestDataProvider<ELEMENT_TYPE>& provider;
+		const bool apiValid;
 	public:
 		ArrayTester(std::string arrayName, BGSKeyword* id, const Array& accessor, const TestDataProvider<ELEMENT_TYPE>& provider)
 			:arrayName(std::move(arrayName))
@@ -26,6 +27,7 @@ namespace Testers
 			,array(accessor)
 			,dataValid(true)
 			,provider(provider)
+			,apiValid(array.Version > 0)
 		{
 			
 		}
@@ -37,6 +39,11 @@ namespace Testers
 			if (!dataValid)
 			{
 				E("%sArray: Can't test with invalid data", arrayName.c_str());
+				return;
+			}
+			if (!apiValid)
+			{
+				E("%sArray: Can't test with no methods initialized", arrayName.c_str());
 				return;
 			}
 			// 1. create array

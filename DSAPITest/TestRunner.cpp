@@ -76,28 +76,30 @@ namespace Test
 	void TestWorker()
 	{
 		using namespace Testers;
+		D("Create data providers");
 		const IntDataProvider intDataProvider;
 		const FloatDataProvider floatDataProvider;
 		const StringDataProvider stringDataProvider;
 		const FormDataProvider formDataProvider;
 		const StatAchievementProvider structDataProvider;
-
+		D("Lookup for WRackTrigger");
 		BGSKeyword* id = DYNAMIC_CAST(LookupFormByID(keyword), TESForm, BGSKeyword);
-		// arrays
+
+		D("Execute array tests");
 		PrimitiveArrayTester("Int", id, intArray, intDataProvider).Perform(&NeedCancel);
 		PrimitiveArrayTester("Float", id, floatArray, floatDataProvider).Perform(&NeedCancel);
 		PrimitiveArrayTester("String", id, stringArray, stringDataProvider).Perform(&NeedCancel);
 		PrimitiveArrayTester("Form", id, formArray, formDataProvider).Perform(&NeedCancel);
 		StructArrayTester(id, structArray, structDataProvider).Perform(&NeedCancel);
 
-		// sets
+		D("Execute set tests");
 		SetTester("Int", id, intSet, intDataProvider).Perform(&NeedCancel);
 		SetTester("Float", id, floatSet, floatDataProvider).Perform(&NeedCancel);
 		SetTester("String", id, stringSet, stringDataProvider).Perform(&NeedCancel);
 		SetTester("Form", id, formSet, formDataProvider).Perform(&NeedCancel);
 
 
-		// value dicts
+		D("Execute value dict tests");
 		PrimitiveValueDictTester("Int", "Int", id, intDictInt, intDataProvider, intDataProvider).Perform(&NeedCancel);
 		PrimitiveValueDictTester("Int", "Float", id, intDictFloat, intDataProvider, floatDataProvider).Perform(&NeedCancel);
 		PrimitiveValueDictTester("Int", "String", id, intDictString, intDataProvider, stringDataProvider).Perform(&NeedCancel);
@@ -117,7 +119,7 @@ namespace Test
 		StructValueDictTester("Form", id, formDictStruct, formDataProvider, structDataProvider).Perform(&NeedCancel);
 
 
-		// array dicts
+		D("Execute array dict tests");
 		PrimitiveArrayDictTester("Int", "Int", id, intDictIntArray, intDataProvider, intDataProvider).Perform(&NeedCancel);
 		PrimitiveArrayDictTester("Int", "Float", id, intDictFloatArray, intDataProvider, floatDataProvider).Perform(&NeedCancel);
 		PrimitiveArrayDictTester("Int", "String", id, intDictStringArray, intDataProvider, stringDataProvider).Perform(&NeedCancel);
@@ -136,6 +138,7 @@ namespace Test
 		PrimitiveArrayDictTester("Form", "Form", id, formDictFormArray, formDataProvider, formDataProvider).Perform(&NeedCancel);
 		StructArrayDictTester("Form", id, formDictStructArray, formDataProvider, structDataProvider).Perform(&NeedCancel);
 
+		D("Tests finished");
 		TestStarted = false;
 	}
 	void Init(F4SEMessagingInterface* messaging, PluginHandle myPlugin)
