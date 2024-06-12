@@ -18,6 +18,7 @@ namespace DSAPI
 			if (size > 0)
 			{
 				this->data = static_cast<T*>(Heap_Allocate(sizeof(T) * size));
+				std::memset(this->data, 0, sizeof(T) * size); // avoid potential side effects if assignment operator behavior depends on left operand content
 				std::copy(data.begin(), data.end(), this->data);
 			}
 		}
