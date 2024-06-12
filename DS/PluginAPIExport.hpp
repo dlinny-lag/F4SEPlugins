@@ -1,5 +1,6 @@
 #pragma once
 
+#include "CollectionTypeId.h"
 #include "f4se/PapyrusVM.h"
 #include "f4se/PapyrusNativeFunctions.h"
 #include "f4se/PapyrusEvents.h"
@@ -9,8 +10,8 @@ namespace PluginAPIExport
 {
 	const char* EXPORT_PAPYRUS_SCRIPT = "DS:Plugin";
 
-	const char* pluginName = "DS";
-	const UInt32 pluginUID = 'DS';
+	const char* pluginName = DS_PluginName;
+	const UInt32 pluginUID = 'DS'; // 17491
 	const UInt32 pluginVersionInt = 0x0093;
 	const char* pluginVersionString = "0.9.3";
 

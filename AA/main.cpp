@@ -78,6 +78,10 @@ void Serialization_Load(const F4SESerializationInterface* intfc)
 	CalculatorsAPIExport::Load(intfc);
 	CalculationSession::Load(intfc);
 	UniqueIdGenerator::Load(intfc);
+	if (LogSettings::LogLevel == LogSettings::Debug)
+	{
+		DebugAPIExport::Dump(nullptr);
+	}
 	_MESSAGE("Game Loaded");
 }
 
@@ -118,7 +122,7 @@ extern "C"
 		F4SEPluginVersionData::kVersion,
 		
 		PluginAPIExport::pluginVersionInt,
-		"Additional Attributes",
+		AA_PluginName,
 		"Dlinny_Lag",
 
 		F4SEPluginVersionData::kAddressIndependence_AddressLibrary_1_10_980,

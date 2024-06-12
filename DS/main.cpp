@@ -146,7 +146,7 @@ extern "C"
 		F4SEPluginVersionData::kVersion,
 		
 		PluginAPIExport::pluginVersionInt,
-		"Fallout 4 Data Structures",
+		DS_PluginName,
 		"Dlinny_Lag",
 
 		F4SEPluginVersionData::kAddressIndependence_AddressLibrary_1_10_980,

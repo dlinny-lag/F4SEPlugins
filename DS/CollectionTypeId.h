@@ -1,5 +1,8 @@
 #pragma once
 
+#define DS_PluginName "DS"
+
+
 #define IntArrayTypeId						'INTA'
 #define FloatArrayTypeId					'FLTA'
 #define StringArrayTypeId					'STRA'

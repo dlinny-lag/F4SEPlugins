@@ -263,13 +263,13 @@ namespace DSAPI
 	// handler will be called with AccessorMessage message type
 	bool inline RegisterForAccessorsReceiving(const F4SEMessagingInterface* messaging, PluginHandle plugin, F4SEMessagingInterface::EventCallback handler)
 	{
-		return messaging->RegisterListener(plugin, "DS", handler);
+		return messaging->RegisterListener(plugin, DS_PluginName, handler);
 	}
 	// appropriate object will be sent to the listener registered with RegisterForAccessorsReceiving
 	bool inline RequestAccessor(const F4SEMessagingInterface* messaging, PluginHandle sender, AccessorType type, int version = 1)
 	{
 		AccessorRequest request{type, version};
-		return messaging->Dispatch(sender, AccessorRequest::MessageType, &request, sizeof(request), "DS");
+		return messaging->Dispatch(sender, AccessorRequest::MessageType, &request, sizeof(request), DS_PluginName);
 	}
 
 	template <typename Accessor>
@@ -285,7 +285,7 @@ namespace DSAPI
 	{
 		if (msg->type != AccessorMessage)
 			return std::nullopt; // wrong message
-		if (strncmp(msg->sender, "DS", 2) != 0)
+		if (strncmp(msg->sender, DS_PluginName, 2) != 0)
 			return std::nullopt; // wrong sender
 		if (msg->dataLen != sizeof(Accessor))
 			return std::nullopt; // data type mismatch
@@ -299,7 +299,7 @@ namespace DSAPI
 	{
 		if (msg->type != AccessorMessage)
 			return {0,AccessorType::None}; // wrong message
-		if (strncmp(msg->sender, "DS", 2) != 0)
+		if (strncmp(msg->sender, DS_PluginName, 2) != 0)
 			return {0,AccessorType::None}; // wrong sender
 		if (msg->dataLen < sizeof(Collection))
 			return  {0,AccessorType::None};

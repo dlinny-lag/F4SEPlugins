@@ -3,6 +3,8 @@
 #include "f4se/PluginAPI.h"
 #include <vector>
 
+#define AA_PluginName "AA"
+
 #ifndef _DEBUG
 // sizeof std::vector in debug build is not equal to sizeof in release build
 // just don't use it in debug build
@@ -95,11 +97,11 @@ namespace Notifications
 	/// Call this method to receive changes notifications. Method must be called after AA plugin loading. See 'Messaging API docs' in f4se/PluginAPI.h
 	/// </summary>
 	/// <param name="messaging">F4SEMessagingInterface for your plugin. Use QueryInterface in F4SEPlugin_Query to obtain pointer</param>
-	/// <param name="plugin">Your plugin handle. use GetPluginHandle in F4SEPlugin_Query to obtain it</param>
+	/// <param name="plugin">Your plugin handle. use F4SEInterface::GetPluginHandle to obtain it</param>
 	/// <param name="handler">Changes notifications handler</param>
 	bool inline SubscribeForChanges(const F4SEMessagingInterface* messaging, PluginHandle plugin, F4SEMessagingInterface::EventCallback handler)
 	{
-		return messaging->RegisterListener(plugin, "AA", handler);
+		return messaging->RegisterListener(plugin, AA_PluginName, handler);
 	}
 
 	template <class T, int version>
@@ -130,11 +132,10 @@ namespace Notifications
 /*
 void ExampleMessageCallback(F4SEMessagingInterface::Message* msg)
 {
-	if (msg->type == Notifications::AttributeIncrementMessageType1)
+	if (msg->type == Notifications::AttributeIncrementMessageType2)
 	{
 		// some value increased
-		ASSERT(sizeof(Notifications::Change1) == msg->dataLen);
-		Notifications::Change1* change = static_cast<Notifications::Change1*>(msg->data);
+		const Notifications::Change2* change = Notifications::GetAsVersion2(msg)
 		// change pointer will be deleted almost immediately after this function return
 		// so you have to get a copy if you want to proceed it later
 	}

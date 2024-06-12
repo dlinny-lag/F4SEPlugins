@@ -1,13 +1,15 @@
 #pragma once
 
+#include "Change.hpp"
 #include "f4se/PapyrusVM.h"
 #include "f4se/PapyrusNativeFunctions.h"
+
 
 namespace PluginAPIExport
 {
 	const char* EXPORT_PAPYRUS_SCRIPT = "AA:Plugin";
 
-	const char* pluginName = "AA";
+	const char* pluginName = AA_PluginName;
 	const UInt32 pluginUID = 'AA';
 	const UInt32 pluginVersionInt = 0x0101;
 	const char* pluginVersionString = "1.0.1";
