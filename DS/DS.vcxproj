@@ -190,6 +190,7 @@
     <ClInclude Include="..\Shared\BSFixedStringEqual.hpp" />
     <ClInclude Include="..\Shared\BSFixedStringHashier.hpp" />
     <ClInclude Include="..\Shared\Comparer.hpp" />
+    <ClInclude Include="..\Shared\DefaultValue.hpp" />
     <ClInclude Include="..\Shared\FormComparer.hpp" />
     <ClInclude Include="..\Shared\FormHashier.hpp" />
     <ClInclude Include="..\Shared\FormsSet.hpp" />

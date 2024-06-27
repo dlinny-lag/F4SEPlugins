@@ -101,7 +101,7 @@ public:
 			iterators.erase(collectionFormId);
 			isFinished = true;
 			needValidation = true;
-			outVal = {};
+			outVal = DefaultValue<T>::Get();
 			return false;
 		}
 		outVal = cur;

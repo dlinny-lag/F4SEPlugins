@@ -85,7 +85,7 @@ namespace DS
 			if (result.has_value())
 				retVal.Set<VALUE_TYPE>("Value", result.value());
 			else
-				retVal.Set<VALUE_TYPE>("Value", {});
+				retVal.Set<VALUE_TYPE>("Value", DefaultValue<VALUE_TYPE>::Get());
 			return retVal;
 		}
 

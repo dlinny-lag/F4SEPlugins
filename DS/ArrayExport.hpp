@@ -7,6 +7,8 @@
 #include "PapyrusExports.h"
 #include <optional>
 #include "IRecordLoader.h"
+#include "Shared/DefaultValue.hpp"
+
 namespace DS
 {
 	template <typename ELEMENT_TYPE, typename ArraySet, const char* PAPYRUS_NAME, typename Derived, typename OUTER_ELEMENT_TYPE=ELEMENT_TYPE>
@@ -178,7 +180,7 @@ namespace DS
 			const std::optional<ELEMENT_TYPE> val = singleton->Get(identifier, index);
 			if (val.has_value())
 				return conv.ToOuter(val.value());
-			return {};  // return default value
+			return DefaultValue<OUTER_ELEMENT_TYPE>::Get();
 		}
 
 		static bool VMSet(StaticFunctionTag* _, BGSKeyword* identifier, SInt32 index, OUTER_ELEMENT_TYPE value)

@@ -388,12 +388,14 @@
     </ClInclude>
     <ClInclude Include="LoadManager.h" />
     <ClInclude Include="IRecordLoader.h" />
+    <ClInclude Include="..\Shared\DefaultValue.hpp">
+      <Filter>Shared</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="VersionInfo.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="exports.def" />
     <None Include="$(F4SEPath)\f4se\GameRTTI.inl">
       <Filter>F4SE</Filter>
     </None>

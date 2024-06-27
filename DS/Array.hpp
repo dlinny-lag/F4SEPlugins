@@ -8,6 +8,7 @@
 #include "ValueHandler.hpp"
 #include "KeyValidator.hpp"
 #include <optional>
+#include "Shared/DefaultValue.hpp"
 
 namespace DS
 {
@@ -58,7 +59,12 @@ namespace DS
 		{
 			if (index < 0 || index >= data.size())
 				return std::nullopt;
-			BSReadLocker lock(&dataLock);
+			BSWriteLocker lock(&dataLock);
+			if (!Validator<T>::IsValid(data[index]))
+			{
+				data[index] = DefaultValue<T>::Get();
+				version++;
+			}
 			return std::optional<T>(data[index]);
 		}
 		virtual bool Set(SInt32 index, T& value)

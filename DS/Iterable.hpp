@@ -71,7 +71,7 @@ namespace DS
 				isValid = iterators.Next(collectionId->formID, iteratorId, val, isFinished, needValidation);
 				if (!isValid)
 				{
-					val = {};
+					val = DefaultValue<ELEMENT_TYPE>::Get();
 					D("Next() returned false on iterator %d of collection %08X", iteratorId, collectionId->formID);
 				}
 				if (needValidation)
@@ -79,7 +79,7 @@ namespace DS
 			}
 			else
 			{
-				val = {};
+				val = DefaultValue<ELEMENT_TYPE>::Get();
 			}
 			Pointer retVal;
 			retVal.Set<UInt32>("IteratorId", iteratorId);
